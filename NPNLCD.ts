@@ -21,10 +21,11 @@ namespace NPNLCD {
     // send data to I2C bus
     function set(d: number) {
         d = d & 0xF0
-        d = d >> 4 
+        d = d >> 4
         d = d + BK + RS
         setreg(d)
-        setreg(d + 4)
+        //setreg(d + 4)
+        setreg(d + 0x20)
         setreg(d)
     }
 
