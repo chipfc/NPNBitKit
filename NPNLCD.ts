@@ -120,6 +120,7 @@ namespace NPNLCD {
      */
     //% blockId="I2C_LCD1620_SHOW_STRING" block="Hiện chữ %s|tại x %x|y %y"
     //% weight=90 blockGap=8
+    //% s.defl="Xin chao"
     //% x.min=0 x.max=15
     //% y.min=0 y.max=1
     //% parts=LCD1602_I2C trackArgs=0
