@@ -25,7 +25,7 @@ namespace NPNLCD {
         d = d + BK + RS
         setreg(d)
         //setreg(d + 4)
-        setreg(d + 0x20)
+        setreg(d + 0x10)
         setreg(d)
     }
 
