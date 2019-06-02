@@ -4,7 +4,7 @@
 //% color="#AA278D"
 //% groups="['Input', 'Output', 'AnalogInput', 'AnalogOutput', 'ComplexInput', 'ComplexOutput']"
 namespace NPNBitKit {
-    //% block="Nút $pinName|đã được nhấn?"
+    //% block="Nút $pinName| được nhấn?"
     //% group=Input
     //% pinName.fieldEditor="gridpicker"
     //% pinName.fieldOptions.width=220
