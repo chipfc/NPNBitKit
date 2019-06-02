@@ -78,7 +78,7 @@ namespace NPNLCD {
     //% addr.defl=39
     //% weight=100 blockGap=8
     //% parts=LCD1602_I2C trackArgs=0
-    export function LcdInit(Addr: number = 39 ) {
+    export function LcdInit(Addr: number=39 ) {
         if (Addr == 0) i2cAddr = AutoAddr()
         else i2cAddr = Addr
         BK = 8
@@ -123,7 +123,7 @@ namespace NPNLCD {
     //% x.min=0 x.max=15
     //% y.min=0 y.max=1
     //% parts=LCD1602_I2C trackArgs=0
-    export function ShowString(s: string, x: number, y: number): void {
+    export function ShowString(s: string="Xin chao", x: number, y: number): void {
         let a: number
 
         if (y > 0)
