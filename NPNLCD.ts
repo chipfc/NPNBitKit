@@ -7,7 +7,7 @@
  * Custom blocks
  */
 //% weight=20 color=#00bc11 icon="▀"
-namespace NPNLCD  {
+namespace NPNLCD {
     let i2cAddr: number // 0x3F: PCF8574A, 0x27: PCF8574
     let BK: number      // backlight control
     let RS: number      // command/data
@@ -78,7 +78,7 @@ namespace NPNLCD  {
     //% addr.defl=39
     //% weight=100 blockGap=8
     //% parts=LCD1602_I2C trackArgs=0
-    export function LcdInit(Addr: number) {
+    export function LcdInit(Addr: number = 39 ) {
         if (Addr == 0) i2cAddr = AutoAddr()
         else i2cAddr = Addr
         BK = 8
