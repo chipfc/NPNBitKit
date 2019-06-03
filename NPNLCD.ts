@@ -77,7 +77,7 @@ namespace NPNLCD {
      * initial LCD, set I2C address. Address is 39/63 for PCF8574/PCF8574A
      * @param Addr is i2c address for LCD, eg: 0, 39, 63. 0 is auto find address
      */
-    //% blockId="I2C_LCD1620_SET_ADDRESS" block="Khởi tạo LCD|| %addr"
+    //% blockId="I2C_LCD1620_SET_ADDRESS" block="Khởi tạo LCD||tại địa chỉ %addr"
     //% addr.defl=39
     //% weight=100 blockGap=8
     //% parts=LCD1602_I2C trackArgs=0
