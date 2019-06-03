@@ -1,4 +1,7 @@
 # npnbitkit
+
+<img src="icon.png" width="100">
+
 ## Giới thiệu
 - Đây là thư viện dành riêng cho bộ kit Microbit Chipi do NPNLab và ChipFC cùng phối hợp thực hiện.
 - Bộ kit này dành cho các chương trình học mở rộng và nâng cao của Microbit để có thể kết nối với các thiết bị ngoại vi phần cứng bên ngoài.
