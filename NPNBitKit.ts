@@ -135,13 +135,21 @@ namespace NPNBitKit {
         return pins.analogReadPin(pinName)
     }
 
-    //% block="Độ rung $pinName"
+    //% block="Độ rung 1 $pinName"
     //% group=ComplexInput
     //% pinName.fieldEditor="gridpicker"
     //% pinName.fieldOptions.width=220
     //% pinName.fieldOptions.columns=4
-    export function Vibration(pinName: AnalogPin): number {
-        return 0
+    export function Vibration(pinName: DigitalPin): number {
+        let startTime = input.runningTime()
+        let pulseCount = 0
+        pins.setPull(pinName, PinPullMode.PullUp)
+        while (input.runningTime() - startTime < 100) {
+            if (pins.digitalReadPin(pinName) == 0) {
+                pulseCount+=1
+            }
+        }
+        return pulseCount
     }
 
     //% block="DHT11: Đọc cảm biến tại $pinName"
