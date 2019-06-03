@@ -199,7 +199,7 @@ namespace NPNLCD {
     /**
      * shift left
      */
-    //% blockId="I2C_LCD1620_SHL" block="Dịch sang trái"
+    //% blockId="I2C_LCD1620_SHL" block="Dịch trái"
     //% weight=61 blockGap=8
     //% parts=LCD1602_I2C trackArgs=0
     export function shl(): void {
