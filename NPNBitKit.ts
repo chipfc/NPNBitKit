@@ -144,14 +144,20 @@ namespace NPNBitKit {
         return 0
     }
 
-    //% block="DHT11: nhiệt độ $pinName|| bằng độ F $active"
+    //% block="DHT11: Đọc cảm biến tại $pinName"
     //% group=ComplexInput
     //% pinName.fieldEditor="gridpicker"
     //% pinName.fieldOptions.width=220
     //% pinName.fieldOptions.columns=4
+    export function DHT11Read(pinName: DigitalPin){
+        DHT11query(pinName)        
+    }
+
+    //% block="DHT11: nhiệt độ || bằng độ F $active"
+    //% group=ComplexInput
     //% active.shadow=toggleYesNo
     //% active.defl=no
-    export function DHT11Temp(pinName: DigitalPin, active: boolean = false): number {
+    export function DHT11Temp( active: boolean = false): number {        
         if (active) {
             //chuyen qua do F
             if (_readSuccessful) return _temperature * 1.8 + 32
@@ -162,12 +168,10 @@ namespace NPNBitKit {
             else return -999
         }
     }
-    //% block="DHT11: độ ẩm $pinName %"
+
+    //% block="DHT11: độ ẩm "
     //% group=ComplexInput
-    //% pinName.fieldEditor="gridpicker"
-    //% pinName.fieldOptions.width=220
-    //% pinName.fieldOptions.columns=4
-    export function DHT11Hum(pinName: DigitalPin): number {
+    export function DHT11Hum(): number {        
         if (_readSuccessful) return _humidity
         else return -999
     }
@@ -190,6 +194,7 @@ namespace NPNBitKit {
         pins.digitalWritePin(dataPin, 0) //begin protocol
         basic.pause(18)
         //if (pullUp) pins.setPull(dataPin, PinPullMode.PullUp) //pull up data pin if needed
+        pins.setPull(dataPin, PinPullMode.PullUp)
         pins.digitalReadPin(dataPin)
         while (pins.digitalReadPin(dataPin) == 1);
         while (pins.digitalReadPin(dataPin) == 0); //sensor response
@@ -216,6 +221,5 @@ namespace NPNBitKit {
 
         _humidity = resultArray[0] + resultArray[1] / 100
         _temperature = resultArray[2] + resultArray[3] / 100
-
     }
 }
