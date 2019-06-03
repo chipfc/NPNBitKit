@@ -22,7 +22,8 @@ namespace NPNBitKit {
         if (pins.digitalReadPin(pinName) == 0) return true
         else return false
     }
-
+ 
+ 
     //% block="Nút cảm ứng $pinName|được nhấn?"
     //% group=Input
     //% pinName.fieldEditor="gridpicker"
