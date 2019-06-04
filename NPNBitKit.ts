@@ -169,11 +169,12 @@ namespace NPNBitKit {
     export function DHT11Temp( active: boolean = false): number {        
         if (active) {
             //chuyen qua do F
-            if (_readSuccessful) return _temperature * 1.8 + 32
+            
+            if (_readSuccessful) return  Math.round(_temperature * 1.8 + 32)
             else return -999
         }
         else {
-            if (_readSuccessful) return _temperature
+            if (_readSuccessful) return Math.round(_temperature)
             else return -999
         }
     }
