@@ -22,8 +22,8 @@ namespace NPNBitKit {
         if (pins.digitalReadPin(pinName) == 0) return true
         else return false
     }
- 
- 
+
+
     //% block="Nút cảm ứng $pinName|được nhấn?"
     //% group=Input
     //% pinName.fieldEditor="gridpicker"
@@ -147,7 +147,7 @@ namespace NPNBitKit {
         pins.setPull(pinName, PinPullMode.PullUp)
         while (input.runningTime() - startTime < 100) {
             if (pins.digitalReadPin(pinName) == 0) {
-                pulseCount+=1
+                pulseCount += 1
             }
         }
         return pulseCount
@@ -158,19 +158,19 @@ namespace NPNBitKit {
     //% pinName.fieldEditor="gridpicker"
     //% pinName.fieldOptions.width=220
     //% pinName.fieldOptions.columns=4
-    export function DHT11Read(pinName: DigitalPin){
-        DHT11query(pinName)        
+    export function DHT11Read(pinName: DigitalPin) {
+        DHT11query(pinName)
     }
 
     //% block="DHT11: nhiệt độ || bằng độ F $active"
     //% group=ComplexInput
     //% active.shadow=toggleYesNo
     //% active.defl=no
-    export function DHT11Temp( active: boolean = false): number {        
+    export function DHT11Temp(active: boolean = false): number {
         if (active) {
             //chuyen qua do F
-            
-            if (_readSuccessful) return  Math.round(_temperature * 1.8 + 32)
+
+            if (_readSuccessful) return Math.round(_temperature * 1.8 + 32)
             else return -999
         }
         else {
@@ -181,7 +181,7 @@ namespace NPNBitKit {
 
     //% block="DHT11: độ ẩm "
     //% group=ComplexInput
-    export function DHT11Hum(): number {        
+    export function DHT11Hum(): number {
         if (_readSuccessful) return _humidity
         else return -999
     }
