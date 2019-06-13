@@ -21,11 +21,11 @@ namespace NPNLCD {
     // send data to I2C bus
     function set(d: number) {
         d = d & 0xF0
-        d = d >> 4
+        //d = d >> 4
         d = d + BK + RS
         setreg(d)
-        //setreg(d + 4)
-        setreg(d + 0x10)
+        setreg(d + 4)
+        //setreg(d + 0x10)
         setreg(d)
     }
 
@@ -38,8 +38,8 @@ namespace NPNLCD {
 
     // send data
     function dat(d: number) {
-        //RS = 1
-        RS = 0x40
+        RS = 1
+        //RS = 0x40
         set(d)
         set(d << 4)
     }
@@ -84,8 +84,8 @@ namespace NPNLCD {
     export function LcdInit(Addr: number = 39) {
         if (Addr == 0) i2cAddr = AutoAddr()
         else i2cAddr = Addr
-        //BK = 8
-        BK = 0x80
+        BK = 8
+        //BK = 0x80
         RS = 0
         cmd(0x33)       // set 4bit mode
         basic.pause(5)
@@ -180,8 +180,8 @@ namespace NPNLCD {
     //% weight=71 blockGap=8
     //% parts=LCD1602_I2C trackArgs=0
     export function BacklightOn(): void {
-        //BK = 8
-        BK = 0x80
+        BK = 8
+        //BK = 0x80
         cmd(0)
     }
 
