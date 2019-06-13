@@ -19,6 +19,7 @@ namespace NPNBitKit {
     //% pinName.fieldOptions.columns=4
     //% weight=50
     export function Button(pinName: DigitalPin): boolean {
+        pins.setPull(pinName, PinPullMode.PullUp)
         if (pins.digitalReadPin(pinName) == 0) return true
         else return false
     }
