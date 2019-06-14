@@ -10,6 +10,8 @@
 - ChipFC: https://chipfc.com/
 - NPNLab: https://www.youtube.com/channel/UCTy7xK0VhROmHb33p2jz_Mw 
 
+<img src="microbit_base_shield_960x640.png" width="300">
+
 ## TODO
 
 - [ ] Add a reference for your blocks here
