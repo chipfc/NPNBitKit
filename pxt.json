@@ -3,7 +3,8 @@
     "version": "0.0.10",
     "description": "",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "ESP8266_IoT": "github:elecfreaks/pxt-esp8266iot"
     },
     "files": [
         "README.md",
