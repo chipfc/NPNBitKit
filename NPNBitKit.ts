@@ -32,6 +32,7 @@ namespace NPNBitKit {
     //% pinName.fieldOptions.columns=4
     //% weight=50
     export function ButtonTouch(pinName: DigitalPin): boolean {
+        pins.setPull(pinName, PinPullMode.PullUp)
         if (pins.digitalReadPin(pinName) == 1) return true
         else return false
     }
@@ -43,6 +44,7 @@ namespace NPNBitKit {
     //% pinName.fieldOptions.columns=4
     //% weight=50
     export function ButtonDoorOpen(pinName: DigitalPin): boolean {
+        pins.setPull(pinName, PinPullMode.PullUp)
         if (pins.digitalReadPin(pinName) == 1) return true
         else return false
     }
